@@ -6,7 +6,7 @@ use_sampler: true
 use_class_weights: true
 sampler_power: 0.45
 experiment_name: misahub_final_exps
-run_name: exp7
+run_name: exp1
 optimizername: adam
 data_dir: D:\Work\Dataset\Misahub-CapsuleVision-Dataset\ImageNetFormat\dataset\imagenet
 model_save_path: ch_checkpoints

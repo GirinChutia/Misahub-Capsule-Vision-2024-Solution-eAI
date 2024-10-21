@@ -16,6 +16,7 @@ Arxiv link :
 ```
 conda create -n efficientvit python=3.10
 conda activate efficientvit
+cd efficientvit
 pip install -r requirements.txt
 ```
 ---
@@ -55,8 +56,8 @@ This will start training using the default configuration file. You can modify `t
 
 ### ▶ Evaluation on training and validation dataset on trained model
 
-The instructions for evaluating the model on training and validation datasets given in 
-***efficientvit / eval_model.ipynb*** notebook.
+The instructions for evaluating the model on training and validation datasets given in
+[***efficientvit / eval_model.ipynb***](efficientvit/eval_model.ipynb) notebook.
 
 ### ▶ Creation of submission file
 Run the below command to create the submission file.
