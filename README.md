@@ -1,14 +1,14 @@
 # 🫧 Capsule Vision Challenge 2024 : Solution
 
-Welcome to my submission for the **[Capsule Vision Challenge 2024: Multi-Class Abnormality Classification for Video Capsule Endoscopy](https://arxiv.org/abs/2408.04940)**. This repository contains the code, models, and instructions for training, evaluating, and inferring with the solution. 🚀
+Welcome to my submission for the **[Capsule Vision Challenge 2024: Multi-Class Abnormality Classification for Video Capsule Endoscopy](https://arxiv.org/abs/2408.04940)**. This repository contains the code, models, and instructions for training, evaluating and creation of submission file.
 
 ---
 
 ## 🌟 Project Overview
 
-This project is designed to solve automatic classification of abnormalities captured in VCE video frames using deep learning techniques. The model leverages **[EfficientViT](https://github.com/mit-han-lab/efficientvit)**.
+This solution is designed to solve automatic classification of abnormalities captured in VCE video frames using deep learning techniques. The model leverages **[EfficientViT](https://github.com/mit-han-lab/efficientvit)** and code is adapted from its [official implementation](https://github.com/mit-han-lab/efficientvit).
 
-## 📊 Solution Report 
+## 📊 Solution Report
 
 Arxiv link : 
 
@@ -24,9 +24,9 @@ pip install -r requirements.txt
 ## Training
 
 To train the model, follow the instructions below:
-From efficientvit directory, run the below command:
+
 ```bash
-python simple_train.py --config config.yaml
+python simple_train.py --config config.yaml # from efficientvit directory
 ```
 
 The dataset format should be in following structure:
