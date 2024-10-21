@@ -1,0 +1,1 @@
+D:\Work\Challenges\Misahub-Capsule-Vision\models\efficientvit\run\checkpoint\sync.pt
