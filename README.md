@@ -23,6 +23,8 @@ pip install -r requirements.txt
 
 ## Training
 
+Download the pre-trained model (imagenet) model from [here](https://www.icloud.com/iclouddrive/0aa43CSXmSwJITAuxD8Zrswng#l2-r224) and put it in `efficientvit/assets/checkpoints` folder.
+
 To train the model, follow the instructions below:
 
 ```bash
@@ -50,7 +52,7 @@ imagenet/
 ```
 
 
-This will start training using the default configuration file. You can modify `train_config.yaml` for your custom settings like learning rate, epochs, batch size, and more.
+This will start training using the default configuration file. `train_config.yaml` can be modified for custom settings like learning rate, epochs, batch size, and more.
 
 ## Evaluation 
 
@@ -65,6 +67,10 @@ Run the below command to create the submission file.
 python create_submission.py --test_folder <test_folder_path> --output_file <output_file_path> --model_path <model_path> --num_classes 10
 ```
 ---
+
+## 📬 Trained model :
+The trained model is available used for submission can be downloaded from the following link:
+https://www.icloud.com/iclouddrive/0a0Zh2XgogcD8DWtx0FYshqsw#EfficientViT-L2-submission-capsvision2024-Team-eAI
 
 
 ## 📬 Contact
