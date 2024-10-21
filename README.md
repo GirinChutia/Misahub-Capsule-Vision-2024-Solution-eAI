@@ -24,9 +24,9 @@ pip install -r requirements.txt
 ## Training
 
 To train the model, follow the instructions below:
-
+From efficientvit directory, run the below command:
 ```bash
-python train.py --config configs/train_config.yaml
+python simple_train.py --config config.yaml
 ```
 
 The dataset format should be in following structure:
