@@ -8,9 +8,11 @@ Welcome to my submission for the **[Capsule Vision Challenge 2024: Multi-Class A
 
 This solution is designed to solve automatic classification of abnormalities captured in VCE video frames using deep learning techniques. The model leverages **[EfficientViT](https://github.com/mit-han-lab/efficientvit)** and code is adapted from its [official implementation](https://github.com/mit-han-lab/efficientvit).
 
+---
+
 ## 📊 Solution Report
 
-Arxiv link : 
+Authorea link : 
 
 ## Installation
 ```
@@ -54,6 +56,8 @@ imagenet/
 
 This will start training using the default configuration file. `train_config.yaml` can be modified for custom settings like learning rate, epochs, batch size, and more.
 
+---
+
 ## Evaluation 
 
 ### ▶ Evaluation on training and validation dataset on trained model
@@ -75,7 +79,6 @@ https://www.icloud.com/iclouddrive/0a0Zh2XgogcD8DWtx0FYshqsw#EfficientViT-L2-sub
 
 ## 📬 Contact
 
-- **Author**: Girin Chutia
 - **Email**: girin.iitm@gmail.com
 
 ---
