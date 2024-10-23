@@ -87,12 +87,6 @@ https://www.icloud.com/iclouddrive/0a0Zh2XgogcD8DWtx0FYshqsw#EfficientViT-L2-sub
 
 ---
 
-### 📄 License
-
-This project is licensed under the MIT License.
-
----
-
 ### ✨ Acknowledgments
 
 A big thanks to challenge organizers for providing this opportunity. 🙏

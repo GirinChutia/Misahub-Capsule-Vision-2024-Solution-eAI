@@ -186,7 +186,7 @@ def train_model(
         mlflow.log_param("model_name", model_name)
         mlflow.log_param("epochs", num_epochs)
         mlflow.log_param("batch_size", batch_size)
-        mlflow.log_param("learning_rate", lr)
+        mlflow.log_param("learning_rate", learning_rate)
         mlflow.log_param("model_save_path", model_save_path)
 
         if kwargs:
