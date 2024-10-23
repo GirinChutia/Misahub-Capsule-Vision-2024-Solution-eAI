@@ -10,13 +10,13 @@ This solution is designed to solve automatic classification of abnormalities cap
 
 ---
 
-## 📊 Solution Report
+## 🌟 Solution Report
 
 Authorea link : 
 
 ---
 
-## Installation
+## 🌟 Installation
 ```
 conda create -n efficientvit python=3.10
 conda activate efficientvit
@@ -25,7 +25,7 @@ pip install -r requirements.txt
 ```
 ---
 
-## Training
+## 🌟 Training
 
 Download the pre-trained model (imagenet) model from [here](https://www.icloud.com/iclouddrive/0aa43CSXmSwJITAuxD8Zrswng#l2-r224) and put it in `efficientvit/assets/checkpoints` folder.
 
@@ -62,32 +62,32 @@ This will start training using the default configuration file. `train_config.yam
 
 ---
 
-## Evaluation 
+## 🌟 Evaluation 
 
-### ▶ Evaluation on training and validation dataset on trained model
+### Evaluation on training and validation dataset on trained model
 
 The instructions for evaluating the model on training and validation datasets given in
 [***efficientvit / eval_model.ipynb***](efficientvit/eval_model.ipynb) notebook.
 
-### ▶ Creation of submission file
+### Creation of submission file
 Run the below command to create the submission file.
 ```bash
 python create_submission.py --test_folder <test_folder_path> --output_file <output_file_path> --model_path <model_path> --num_classes 10
 ```
 ---
 
-## 📬 Trained model :
+## 🌟 Trained model :
 The trained model used for submission can be downloaded from the following link:
 https://www.icloud.com/iclouddrive/0a0Zh2XgogcD8DWtx0FYshqsw#EfficientViT-L2-submission-capsvision2024-Team-eAI
 
 
-## 📬 Contact
+## 🌟 Contact
 
 - **Email**: girin.iitm@gmail.com
 
 ---
 
-### ✨ Acknowledgments
+### 🌟 Acknowledgments
 
 A big thanks to challenge organizers for providing this opportunity. 🙏
 
