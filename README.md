@@ -12,7 +12,7 @@ This solution is designed to solve automatic classification of abnormalities cap
 
 ## 🌟 Solution Report
 
-Authorea link : 
+Report link : [link](https://www.researchgate.net/publication/385172304_Multi-Class_Abnormality_Detection_for_Video_Capsule_Endoscopy_Using_EfficientViT_Weighted_Loss_and_Weighted_Sampling_Techniques?channel=doi&linkId=67194933edbc012ea138be57&showFulltext=true) 
 
 ---
 
