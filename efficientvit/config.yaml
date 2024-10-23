@@ -1,13 +1,13 @@
 num_classes: 10
 batch_size: 32
-lr: 0.0001
+learning_rate: 0.0001
 num_epochs: 26
 use_sampler: true
 use_class_weights: true
 sampler_power: 0.35
 experiment_name: misahub_capsvision_2024_exps
 run_name: exp1
-optimizername: adamW
+optimizer_name: adamW
 data_dir: D:\Work\Dataset\Misahub-CapsuleVision-Dataset\ImageNetFormat\dataset\imagenet
 model_save_path: ch_checkpoints
 model_name: EfficientViT-L2

@@ -14,6 +14,8 @@ This solution is designed to solve automatic classification of abnormalities cap
 
 Authorea link : 
 
+---
+
 ## Installation
 ```
 conda create -n efficientvit python=3.10
@@ -39,14 +41,16 @@ The dataset format should be in following structure:
 imagenet/
 ├── train/
 │       ├── Angioectasia/
-│       │   └── ...
+│       │       └── image1.jpg
+│       │       └── image2.jpg
 │       ├── Bleeding/
-│       │   └── ...
+│       │       └── ...
 │       ├── Normal/
 │       └── ...
 └── val/s
         ├── Angioectasia/
-        │   └── ...
+        │       └── image111.jpg
+        │       └── image211.jpg
         ├── Bleeding/
         │   └── ...
         ├── Normal/
@@ -73,7 +77,7 @@ python create_submission.py --test_folder <test_folder_path> --output_file <outp
 ---
 
 ## 📬 Trained model :
-The trained model is available used for submission can be downloaded from the following link:
+The trained model used for submission can be downloaded from the following link:
 https://www.icloud.com/iclouddrive/0a0Zh2XgogcD8DWtx0FYshqsw#EfficientViT-L2-submission-capsvision2024-Team-eAI
 
 
