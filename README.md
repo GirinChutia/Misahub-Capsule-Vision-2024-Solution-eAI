@@ -58,7 +58,9 @@ imagenet/
 ```
 
 
-This will start training using the default configuration file. `train_config.yaml` can be modified for custom settings like learning rate, epochs, batch size, and more.
+This will start training using the default configuration file. `config.yaml` can be modified for custom settings like learning rate, epochs, batch size, and more.
+
+MLFlow is integrated for logging the metrics and can be used for monitoring the training process.
 
 ---
 
