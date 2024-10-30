@@ -20,16 +20,13 @@ from eval_model import get_image_paths, single_image_inference, infer_folder, ev
 def parse_arguments():
     """
     Parse command line arguments
-
-    Returns:
-        argparse.Namespace: a namespace containing the parsed arguments
     """
     parser = argparse.ArgumentParser(description="Evaluate EfficientViT model on capsule endoscopy images")
 
     parser.add_argument("--test_folder", type=str, required=True, help="Path to test folder")
     parser.add_argument("--model_path", type=str, required=True, help="Path to the best model checkpoint")
     parser.add_argument("--num_classes", type=int, default=10, help="Number of classes in the classification task")
-    parser.add_argument("--output_file", type=str, default="submission.xlsx", help="Name of the output Excel file")
+    parser.add_argument("--output_file", type=str, default="eAI_predicted_test_dataset.xlsx", help="Name of the output Excel file")
 
     return parser.parse_args()
 
