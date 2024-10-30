@@ -130,6 +130,7 @@ def single_image_inference(model, image_path, device):
     y_hat = torch.softmax(output, dim=1)
     y_hat = y_hat.detach().cpu()
     prob_preds = list(y_hat.numpy()[0])
+    prob_preds = [round(x, 4) for x in prob_preds]
     pred_conf, pred_class = torch.max(y_hat, dim=1)
     pred_conf = pred_conf.item()
     pred_class = pred_class.item()

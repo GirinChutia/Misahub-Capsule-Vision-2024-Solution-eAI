@@ -7,7 +7,7 @@ from eval_model import get_image_paths, single_image_inference, infer_folder, ev
 import pandas as pd
 from tqdm import tqdm
 
-# ======== Dataset Format ========
+# ======== Dataset Folder Format ========
 
 # dataset_folder
 # ├── training
@@ -45,7 +45,15 @@ from tqdm import tqdm
 # =============================
 
 def infer_train_val(data):
-    
+    """
+    Perform inference on the training and validation datasets.
+
+    Args:
+        data (list): A list of tuples containing the full path, image path, ground truth label and dataset name of all images in the dataset folder
+
+    Returns:
+        pd.DataFrame: A DataFrame containing the image paths, dataset names and predicted probabilities for each class
+    """
     image_paths_list = []
     labels = []
     pred_confs = []
@@ -55,27 +63,27 @@ def infer_train_val(data):
     dataset_names = []
 
     class_names = [
-            "Angioectasia",
-            "Bleeding",
-            "Erosion",
-            "Erythema",
-            "Foreign Body",
-            "Lymphangiectasia",
-            "Normal",
-            "Polyp",
-            "Ulcer",
-            "Worms",
-        ]
+        "Angioectasia",
+        "Bleeding",
+        "Erosion",
+        "Erythema",
+        "Foreign Body",
+        "Lymphangiectasia",
+        "Normal",
+        "Polyp",
+        "Ulcer",
+        "Worms",
+    ]
 
-    for dp in tqdm(data,total=len(data)):
+    # Iterate over all images in the dataset
+    for dp in tqdm(data, total=len(data)):
         fullpath = dp[0]
         imagepath = dp[1]
         gt_label = dp[2]
         dataset = dp[3]
-        prob_preds, pred_conf, pred_class, pred_class_name = single_image_inference(model, 
-                                                                                    fullpath,
-                                                                                    device)
-        
+        # Perform single image inference
+        prob_preds, pred_conf, pred_class, pred_class_name = single_image_inference(model, fullpath, device)
+        # Append results to the lists
         image_paths_list.append(imagepath)
         labels.append(gt_label)
         pred_confs.append(pred_conf)
@@ -83,46 +91,56 @@ def infer_train_val(data):
         pred_class_names.append(pred_class_name)
         all_prob_pred.append(prob_preds)
         dataset_names.append(dataset)
-        
-    df = pd.DataFrame(
-                {
-                    "image_path": image_paths_list,
-                    "Dataset":dataset_names,
-                    # "true_label": labels,
-                    # "predicted_class": pred_class_names,
-                }
-            )
 
+    # Create a DataFrame from the lists
+    df = pd.DataFrame(
+        {
+            "image_path": image_paths_list,
+            "Dataset": dataset_names,
+            # "true_label": labels,
+            # "predicted_class": pred_class_names,
+        }
+    )
+
+    # Add columns for each class
     for i, class_name in enumerate(class_names):
         df[f"{class_name}"] = [prob_pred[i] for prob_pred in all_prob_pred]
-        
+
     return df
 
 def get_train_val_data(dataset_folder):
+    """
+    Get a list of tuples containing the full path and image path of all images in the dataset folder
+
+    Args:
+        dataset_folder (str): The path to the dataset folder
+
+    Returns:
+        list: A list of tuples containing the full path and image path of all images in the dataset folder
+    """
     _data = []
     for root, dirs, files in os.walk(dataset_folder):
         for file in files:
-            if file.endswith(".jpg"): 
+            if file.endswith(".jpg"):
                 full_path = os.path.join(root, file)
+                # Get the class label and dataset name from the folder structure
                 parts = full_path.split(os.sep)
                 classlabel = parts[-3]
                 dataset = parts[-2]
+                # Create the relative path to the image
                 dpath = [parts[-4], parts[-3], parts[-2], parts[-1]]
-                dpath = '/'.join(dpath)
-                _data.append([full_path, dpath, classlabel, dataset]) # full path, image path, dataset, attribute
+                dpath = '\\'.join(dpath)
+                # Add the full path and relative path to the list
+                _data.append([full_path, dpath, classlabel, dataset])
     return _data
-
 
 def parse_arguments():
     """
     Parse command line arguments
-
-    Returns:
-        argparse.Namespace: a namespace containing the parsed arguments
     """
     parser = argparse.ArgumentParser(description="Evaluate EfficientViT model on capsule endoscopy images")
 
-    parser.add_argument("--dataset_folder", type=str, required=True, help="Path to test folder")
+    parser.add_argument("--dataset_folder", type=str, required=True, help="Path to root folder of training & validatio dataset")
     parser.add_argument("--model_path", type=str, required=True, help="Path to the best model checkpoint")
     parser.add_argument("--num_classes", type=int, default=10, help="Number of classes in the classification task")
     
@@ -155,9 +173,11 @@ if __name__ == "__main__":
     print(f"Inferring Validation folder: {val_folder}")
     val_data = get_train_val_data(val_folder)
     
+    # Create dataframes for training and validation datasets
     train_df = infer_train_val(train_data)
     val_df = infer_train_val(val_data)
     
+    # Save the results to Excel files
     train_df.to_excel("eAI_predicted_train_dataset.xlsx",
                       index=False)
     val_df.to_excel("eAI_predicted_val_dataset.xlsx", 
