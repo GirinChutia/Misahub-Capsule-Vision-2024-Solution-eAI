@@ -1,4 +1,4 @@
-# 🫧 Capsule Vision Challenge 2024 : Solution
+# 🫧 Capsule Vision Challenge 2024 : Solution (8'th Position)
 
 Welcome to my submission for the **[Capsule Vision Challenge 2024: Multi-Class Abnormality Classification for Video Capsule Endoscopy](https://arxiv.org/abs/2408.04940)**. This repository contains the code, models, and instructions for training, evaluating and creation of submission file.
 
